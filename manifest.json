@@ -1,0 +1,32 @@
+{
+  "name": "siren",
+  "version": "0.0.1",
+  "description": "Example for a Siren API with FoxxGenerator",
+  "author": "Lucas Dohmen",
+  "license": "Apache 2 License",
+
+  "contributors": [
+  ],
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moonglum/siren.git"
+  },
+
+  "keywords": [
+  ],
+
+  "engines": {
+    "arangodb": "2.0"
+  },
+
+  "controllers": {
+    "/siren": "siren_example.js"
+  },
+
+  "rootElement": true,
+
+  "assets": {},
+  "files": {},
+  "lib": "."
+}
