@@ -7,7 +7,7 @@
     Joi = require('joi'),
     generator;
 
-  generator = new FoxxGenerator('example', {
+  generator = new FoxxGenerator('siren_example', {
     mediaType: 'application/vnd.siren+json',
     applicationContext: applicationContext,
   });
