@@ -36,7 +36,7 @@
     },
 
     parameters: {
-      title: Joi.string()
+      description: Joi.string()
       // .required();
       // .default('hello').description('roflcopter')
     }
