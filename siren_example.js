@@ -25,6 +25,26 @@
     to: 'one'
   });
 
+  generator.defineTransition('relatedIdea', {
+    semantics: 'follow',
+    description: 'Show related ideas of this idea',
+    to: 'many'
+  });
+
+  generator.defineTransition('addRelatedIdea', {
+    semantics: 'link',
+    as: 'relatedIdea',
+    description: 'Add a related idea to this idea',
+    to: 'many'
+  });
+
+  generator.defineTransition('removeRelatedIdea', {
+    semantics: 'unlink',
+    as: 'relatedIdea',
+    description: 'Remove a related idea of this idea',
+    to: 'many'
+  });
+
   // This should result in an action
   generator.defineTransition('addIdea', {
     semantics: 'link',
@@ -79,6 +99,9 @@
     },
 
     transitions: [
+      { to: 'idea', via: 'relatedIdea' },
+      { to: 'idea', via: 'addRelatedIdea' },
+      { to: 'idea', via: 'removeRelatedIdea' }
     ]
   });
 
