@@ -91,6 +91,12 @@
     }
   });
 
+  generator.defineTransition('getTitle', {
+    semantics: 'link',
+    to: 'one',
+    description: 'Get the title of an entity'
+  });
+
   generator.addStartState({
     transitions: [
       { to: 'ideas', via: 'listIdeas' },
@@ -112,7 +118,8 @@
       { to: 'idea', via: 'relatedIdea' },
       { to: 'idea', via: 'addRelatedIdea' },
       { to: 'idea', via: 'removeRelatedIdea' },
-      { to: 'idea', via: 'changeTitle' }
+      { to: 'idea', via: 'changeTitle' },
+      { to: 'titleExtractor', via: 'getTitle' }
     ]
   });
 
@@ -123,6 +130,15 @@
       { to: 'idea', via: 'addIdea' },
       { to: 'idea', via: 'showDetail' }
     ]
+  });
+
+  generator.addState('titleExtractor', {
+    type: 'service',
+
+    action: function (req, res) {
+      var entity = req.params('entity');
+      res.json({ title: entity.get('title') });
+    }
   });
 
   generator.addState('addition', {
