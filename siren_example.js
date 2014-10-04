@@ -56,9 +56,8 @@
     },
 
     parameters: {
-      description: Joi.string()
-      // .required();
-      // .default('hello').description('roflcopter')
+      description: Joi.string(),
+      title: Joi.string()
     }
   });
 
@@ -82,6 +81,16 @@
     }
   });
 
+  generator.defineTransition('changeTitle', {
+    semantics: 'modify',
+    to: 'one',
+    description: 'Modify the title of the entity',
+
+    parameters: {
+      title: Joi.string()
+    }
+  });
+
   generator.addStartState({
     transitions: [
       { to: 'ideas', via: 'listIdeas' },
@@ -95,13 +104,15 @@
     parameterized: true,
 
     attributes: {
-      description: { type: 'string', required: true }
+      description: { type: 'string', required: true },
+      title: { type: 'string', required: true }
     },
 
     transitions: [
       { to: 'idea', via: 'relatedIdea' },
       { to: 'idea', via: 'addRelatedIdea' },
-      { to: 'idea', via: 'removeRelatedIdea' }
+      { to: 'idea', via: 'removeRelatedIdea' },
+      { to: 'idea', via: 'changeTitle' }
     ]
   });
 
