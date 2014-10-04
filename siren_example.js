@@ -63,7 +63,7 @@
   });
 
   generator.defineTransition('addTwoNumbers', {
-    semantics: 'link',
+    semantics: 'follow',
     to: 'one',
     description: 'Add numbers',
 
@@ -73,7 +73,7 @@
   });
 
   generator.defineTransition('calculateFibonacci', {
-    semantics: 'link',
+    semantics: 'follow',
     to: 'one',
     description: 'Calculate Fibonacci',
 
