@@ -12,7 +12,6 @@
     applicationContext: applicationContext,
   });
 
-  // This should result in a link
   generator.defineTransition('listIdeas', {
     semantics: 'follow',
     description: 'Get the list of all ideas',
@@ -45,7 +44,6 @@
     to: 'many'
   });
 
-  // This should result in an action
   generator.defineTransition('addIdea', {
     semantics: 'link',
     to: 'one',
@@ -166,7 +164,6 @@
     action: function (data) {
       var calculateFor = data.calculateFor;
 
-      require('console').log('calculateFor: %s', calculateFor);
       var a=0, b=1, i, temp;
 
       for (i = 0; i < calculateFor; i++) {
@@ -184,7 +181,7 @@
       require('console').log('Could not calculate');
     },
 
-    // maxFailures: 4,
+    maxFailures: 1,
 
     queue: 'fibonaccis'
   });
