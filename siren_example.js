@@ -13,19 +13,14 @@
   });
 
   generator.defineTransition('listIdeas', {
-    semantics: 'follow',
-    description: 'Get the list of all ideas',
-    to: 'one'
+    description: 'Get the list of all ideas'
   });
 
   generator.defineTransition('showDetail', {
-    semantics: 'follow',
-    description: 'Show details for a particular item',
-    to: 'one'
+    description: 'Show details for a particular item'
   });
 
   generator.defineTransition('relatedIdea', {
-    semantics: 'follow',
     description: 'Show related ideas of this idea',
     to: 'many'
   });
@@ -46,7 +41,6 @@
 
   generator.defineTransition('addIdea', {
     semantics: 'link',
-    to: 'one',
     description: 'Add an idea',
 
     condition: function () {
@@ -60,8 +54,6 @@
   });
 
   generator.defineTransition('addTwoNumbers', {
-    semantics: 'follow',
-    to: 'one',
     description: 'Add numbers',
 
     parameters: {
@@ -71,7 +63,6 @@
 
   generator.defineTransition('changeTitle', {
     semantics: 'modify',
-    to: 'one',
     description: 'Modify the title of the entity',
 
     parameters: {
@@ -81,7 +72,6 @@
 
   generator.defineTransition('getTitle', {
     semantics: 'link',
-    to: 'one',
     description: 'Get the title of an entity'
   });
 
