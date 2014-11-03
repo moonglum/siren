@@ -26,21 +26,21 @@
   });
 
   generator.defineTransition('addRelatedIdea', {
-    type: 'link',
+    type: 'connect',
     as: 'relatedIdea',
     description: 'Add a related idea to this idea',
     to: 'many'
   });
 
   generator.defineTransition('removeRelatedIdea', {
-    type: 'unlink',
+    type: 'disconnect',
     as: 'relatedIdea',
     description: 'Remove a related idea of this idea',
     to: 'many'
   });
 
   generator.defineTransition('addIdea', {
-    type: 'link',
+    type: 'connect',
     description: 'Add an idea',
 
     condition: function () {
@@ -71,7 +71,7 @@
   });
 
   generator.defineTransition('getTitle', {
-    type: 'link',
+    type: 'connect',
     description: 'Get the title of an entity'
   });
 
