@@ -26,21 +26,21 @@
   });
 
   generator.defineTransition('addRelatedIdea', {
-    semantics: 'link',
+    type: 'link',
     as: 'relatedIdea',
     description: 'Add a related idea to this idea',
     to: 'many'
   });
 
   generator.defineTransition('removeRelatedIdea', {
-    semantics: 'unlink',
+    type: 'unlink',
     as: 'relatedIdea',
     description: 'Remove a related idea of this idea',
     to: 'many'
   });
 
   generator.defineTransition('addIdea', {
-    semantics: 'link',
+    type: 'link',
     description: 'Add an idea',
 
     condition: function () {
@@ -62,7 +62,7 @@
   });
 
   generator.defineTransition('changeTitle', {
-    semantics: 'modify',
+    type: 'modify',
     description: 'Modify the title of the entity',
 
     parameters: {
@@ -71,7 +71,7 @@
   });
 
   generator.defineTransition('getTitle', {
-    semantics: 'link',
+    type: 'link',
     description: 'Get the title of an entity'
   });
 
