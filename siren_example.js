@@ -87,8 +87,8 @@
     parameterized: true,
 
     attributes: {
-      description: { type: 'string', required: true },
-      title: { type: 'string', required: true }
+      description: Joi.string().required(),
+      title: Joi.string().required()
     },
 
     transitions: [
