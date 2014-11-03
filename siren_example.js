@@ -12,36 +12,54 @@
     applicationContext: applicationContext,
   });
 
+  /** Get the list of all ideas
+   *
+   * Some longer text.
+   */
   generator.defineTransition('listIdeas', {
-    description: 'Get the list of all ideas'
   });
 
+  /** Show details for a particular item
+   *
+   * Some longer text.
+   */
   generator.defineTransition('showDetail', {
-    description: 'Show details for a particular item'
   });
 
+  /** Show related ideas of this idea
+   *
+   * Some longer text.
+   */
   generator.defineTransition('relatedIdea', {
-    description: 'Show related ideas of this idea',
     to: 'many'
   });
 
+  /** Add a related idea to this idea
+   *
+   * Some longer text.
+   */
   generator.defineTransition('addRelatedIdea', {
     type: 'connect',
     as: 'relatedIdea',
-    description: 'Add a related idea to this idea',
     to: 'many'
   });
 
+  /** Remove a related idea of this idea
+   *
+   * Some longer text.
+   */
   generator.defineTransition('removeRelatedIdea', {
     type: 'disconnect',
     as: 'relatedIdea',
-    description: 'Remove a related idea of this idea',
     to: 'many'
   });
 
+  /** Add an idea
+   *
+   * Some longer text.
+   */
   generator.defineTransition('addIdea', {
     type: 'connect',
-    description: 'Add an idea',
 
     condition: function () {
       return true;
@@ -53,26 +71,34 @@
     }
   });
 
+  /** Add numbers
+   *
+   * Some longer text.
+   */
   generator.defineTransition('addTwoNumbers', {
-    description: 'Add numbers',
-
     parameters: {
       summands: Joi.array().includes(Joi.number())
     }
   });
 
+  /** Modify the title of the entity
+   *
+   * Some longer text.
+   */
   generator.defineTransition('changeTitle', {
     type: 'modify',
-    description: 'Modify the title of the entity',
 
     parameters: {
       title: Joi.string()
     }
   });
 
+  /** Get the title of an entity
+   *
+   * Some longer text.
+   */
   generator.defineTransition('getTitle', {
-    type: 'connect',
-    description: 'Get the title of an entity'
+    type: 'connect'
   });
 
   generator.addStartState({
