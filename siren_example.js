@@ -15,16 +15,15 @@
   /** Get the list of all ideas
    *
    * Some longer text.
+   * Looooong.
    */
-  generator.defineTransition('listIdeas', {
-  });
+  generator.defineTransition('listIdeas');
 
   /** Show details for a particular item
    *
    * Some longer text.
    */
-  generator.defineTransition('showDetail', {
-  });
+  generator.defineTransition('showDetail');
 
   /** Show related ideas of this idea
    *
@@ -111,6 +110,7 @@
   generator.addState('idea', {
     type: 'entity',
     parameterized: true,
+    containedIn: 'ideas',
 
     attributes: {
       description: Joi.string().required(),
@@ -128,6 +128,7 @@
 
   generator.addState('ideas', {
     type: 'repository',
+    contains: 'idea',
 
     transitions: [
       { to: 'idea', via: 'addIdea' },
