@@ -97,7 +97,7 @@
    * Some longer text.
    */
   generator.defineTransition('getTitle', {
-    type: 'connect'
+    type: 'follow'
   });
 
   generator.addStartState({
