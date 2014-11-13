@@ -138,6 +138,8 @@
 
   generator.addState('titleExtractor', {
     type: 'service',
+    superstate: 'idea',
+    verb: 'get',
 
     action: function (req, res) {
       var entity = req.params('entity');
