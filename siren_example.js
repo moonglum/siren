@@ -141,9 +141,10 @@
     superstate: 'idea',
     verb: 'get',
 
-    action: function (req, res) {
-      var entity = req.params('entity');
-      res.json({ title: entity.get('title') });
+    action: function (req, res, options) {
+      res.json({
+        title: options.superstate.entity.get('title')
+      });
     }
   });
 
